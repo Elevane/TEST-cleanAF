@@ -10,6 +10,10 @@ namespace cleanAf.infrastructure.Persistence
 {
     public class ApplicationContext : DbContext
     {
-        public DbSet<User> Users {get; set;} // dépendance au projet domain inférieur dans l'ognion
+        public ApplicationContext(DbContextOptions<ApplicationContext> options) : base(options)
+        {
+
+        }
+        public DbSet<User> Users { get; set; } // dépendance au projet domain inférieur dans l'ognion
     }
 }

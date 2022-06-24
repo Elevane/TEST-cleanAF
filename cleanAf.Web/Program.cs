@@ -15,7 +15,8 @@ builder.Services.AddEndpointsApiExplorer();
 
 builder.Services.AddScoped<UserRepository>();
 builder.Services.AddScoped<UserService>();
-builder.Services.AddScoped<ApplicationContext>();
+builder.Services.AddDbContext<ApplicationDbContext>(
+        options => options.UseSqlServer("**connectionString**")); // tu peux aussi placer la constring dans les seccrets ou appsetings et utiliser : Configuration.getSection(**key**);
 builder.Services.AddAutoMapper(Assembly.GetExecutingAssembly());
 var app = builder.Build();
 

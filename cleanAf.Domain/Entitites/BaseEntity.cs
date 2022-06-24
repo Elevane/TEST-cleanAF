@@ -6,10 +6,8 @@ using System.Threading.Tasks;
 
 namespace cleanAf.Domain.Entitites
 {
-    public class User : BaseEntity
+    public class BaseEntity
     {
-
-        public string Name { get; set; }
-        public Adress Adress { get; set; }
+        public int Id { get; set; }
     }
 }
